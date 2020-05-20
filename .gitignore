@@ -332,4 +332,4 @@ walkthedog/media/
 
 .ipython/
 .env
-.envs/*
+#.envs/*
