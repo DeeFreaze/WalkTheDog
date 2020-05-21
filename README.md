@@ -27,8 +27,8 @@ TODO:  | <Description>
 # Deploy Local:
 Команда  | Описание
 ----------------|----------------------
-docker-compose -f local.yml up      | Запускаем контейнер с работой в фоновом режиме
-docker-compose -f local.yml up -d   | Запускаем контейнер с работой в реальном времени
+docker-compose -f local.yml up -d    | Запускаем контейнер с работой в фоновом режиме
+docker-compose -f local.yml up       | Запускаем контейнер с работой в реальном времени
 docker-compose -f local.yml build    | Делаем build контейнера
 docker-compose -f local.yml run --rm django python manage.py makemigrations    | Делаем миграции после обновления моделей
 docker-compose -f local.yml run --rm django python manage.py migrate    | Делаем миграции для всего проекта
