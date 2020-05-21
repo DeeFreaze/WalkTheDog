@@ -9,6 +9,9 @@ hiredis==1.0.1  # https://github.com/redis/hiredis-py
 celery==4.4.2  # pyup: < 5.0  # https://github.com/celery/celery
 django-celery-beat==2.0.0  # https://github.com/celery/django-celery-beat
 flower==0.9.4  # https://github.com/mher/flower
+django-widget-tweaks
+easy_thumbnails
+beautifulsoup4==4.9.0
 
 # Django
 # ------------------------------------------------------------------------------
