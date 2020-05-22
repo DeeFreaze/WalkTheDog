@@ -16,12 +16,6 @@ TODO:  | <Description>
 TODO:  | <Description> 
 TODO:  | <Description> 
 TODO:  | <Description> 
-TODO:  | <Description> 
-TODO:  | <Description> 
-TODO:  | <Description> 
-TODO:  | <Description> 
-TODO:  | <Description> 
-TODO:  | <Description> 
 
 
 # Deploy Local:
