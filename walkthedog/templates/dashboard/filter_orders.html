@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+          <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+          <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+
+          <!-- Title -->
+          <div id="u194" class="ax_default heading_2">
+            <div id="u194_div" class=""></div>
+            <div id="u194_text" class="text ">
+              <p><span>List of orders</span></p>
+            </div>
+          </div>
+          <!-- Map (Placeholder) -->
+            <div id="u192" class="ax_default" data-label="Map_view" data-left="563" data-top="395" data-width="540" data-height="576">
+
+              <div id="u193" class="ax_default placeholder" data-label="Map">
+
+
+                  <div id='map' style='width: 510px; height: 550px;'></div>
+
+                <script>
+                  var featureCollection = []; // Initialize empty collection
+                  //'https://img.icons8.com/plasticine/2x/dog.png'
+                  //center: [36.2304, 49.9903],
+                  // coordinates ////////////////////////////////// <--------------------------- take from BD
+                  var longLat = [
+                        [36.2224, 49.9913],
+                        [36.2134, 49.9643],
+                        [36.2314, 49.9723]
+                      ];
+                  //////////////////////////////////////////////////
+                      // for every item object within longLat
+                      for(var itemIndex in longLat) {
+                        // push new feature to the collection
+                        featureCollection.push({
+                          'type': 'Feature', 'geometry': { 'type': 'Point', 'coordinates': [longLat[itemIndex][0], longLat[itemIndex][1]] }
+
+                        });
+                      }
+                  mapboxgl.accessToken = 'pk.eyJ1IjoiZG15dHJvYnVoYWkiLCJhIjoiY2thbGUxMjRqMHRoZTJzanViYmZieWI4ZCJ9.8odco6gxbS-uVa4fDtE6Tg';
+                  var map = new mapboxgl.Map({
+                  container: 'map',
+                  style: 'mapbox://styles/mapbox/streets-v11',
+                  center: [36.2304, 49.9903],
+                  zoom: 9
+                  });
+
+                  map.on('load', function() {
+                    map.loadImage(
+                      'https://img.icons8.com/plasticine/2x/dog.png',
+                      function(error, image) {
+                        if (error) throw error;
+                        map.addImage('dog', image);
+                        map.addSource('point', {
+                          'type': 'geojson',
+                          'data': {
+                            'type': 'FeatureCollection',
+                            'features': featureCollection
+                          }
+                        });
+                        map.addLayer({
+                          'id': 'symbols',
+                          'type': 'symbol',
+                          'source': 'point',
+                            'layout': {
+                              'icon-image': 'dog',
+                              'icon-size': 0.15
+                            }
+                        });
+                      }
+                    );
+                    // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
+                    map.on('click', 'symbols', function(e) {map.flyTo({center: e.features[0].geometry.coordinates });});
+
+                    // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
+                    map.on('mouseenter', 'symbols', function() {
+                    map.getCanvas().style.cursor = 'pointer';
+                    });
+
+                    // Change it back to a pointer when it leaves.
+                    map.on('mouseleave', 'symbols', function() {
+                    map.getCanvas().style.cursor = '';
+                    });
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+          <!--List-->
+          <div id="u191" class="ax_default">
+            <iframe id="u191_input" scrolling="auto" frameborder="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+
+
+{% endblock %}

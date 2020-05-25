@@ -1,9 +1,12 @@
 {% load static i18n compress%}
+{% load static %}
+{% load widget_tweaks %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title>{% block title %}Walk The Dog{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -26,6 +29,7 @@
     {% compress css %}
     <!-- This file stores project-specific CSS -->
 
+    <link href="{% static 'css/axure_rp_page.css' %}" rel="stylesheet">
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
 
     {% endcompress %}
@@ -34,62 +38,216 @@
   </head>
 
   <body>
+{#    <div class="mb-1">#}
+{#      <nav class="navbar navbar-expand-md navbar-light bg-light">#}
+{#        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">#}
+{#          <span class="navbar-toggler-icon"></span>#}
+{#        </button>#}
+{#        <a class="navbar-brand" href="{% url 'home' %}">WalkTheDog</a>#}
+{##}
+{#        <div class="collapse navbar-collapse" id="navbarSupportedContent">#}
+{#          <ul class="navbar-nav mr-auto">#}
+{#            <li class="nav-item active">#}
+{#              <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>#}
+{#            </li>#}
+{#            <li class="nav-item">#}
+{#              <a class="nav-link" href="{% url 'about' %}">About</a>#}
+{#            </li>#}
+{#            {% if request.user.is_authenticated %}#}
+{#              <li class="nav-item">#}
+                {# URL provided by django-allauth/account/urls.py #}
+{#                <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>#}
+{#              </li>#}
+{#              <li class="nav-item">#}
+                {# URL provided by django-allauth/account/urls.py #}
+{#                <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>#}
+{#              </li>#}
+{#            {% else %}#}
+{#              <li class="nav-item">#}
+                {# URL provided by django-allauth/account/urls.py #}
+{#                <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>#}
+{#              </li>#}
+{#              <li class="nav-item">#}
+                {# URL provided by django-allauth/account/urls.py #}
+{#                <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>#}
+{#              </li>#}
+{#            {% endif %}#}
+{#          </ul>#}
+{#        </div>#}
+{#      </nav>#}
+{##}
+{#    </div>#}
 
-    <div class="mb-1">
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="{% url 'home' %}">WalkTheDog</a>
+    <div id="base" class="">
+      <!-- Main_Page (Group) -->
+      <div id="u54" class="ax_default" data-label="Main_Page" data-left="-2" data-top="0" data-width="1126" data-height="2395">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">About</a>
-            </li>
-            {% if request.user.is_authenticated %}
-              <li class="nav-item">
-                {# URL provided by django-allauth/account/urls.py #}
-                <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
-              </li>
-              <li class="nav-item">
-                {# URL provided by django-allauth/account/urls.py #}
-                <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
-              </li>
-            {% else %}
-              <li class="nav-item">
-                {# URL provided by django-allauth/account/urls.py #}
-                <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
-              </li>
-              <li class="nav-item">
-                {# URL provided by django-allauth/account/urls.py #}
-                <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
-              </li>
-            {% endif %}
-          </ul>
+        <!-- Unnamed (Sceleton of page) -->
+
+        <!-- Body-Image (Rectangle) -->
+        <div id="u56" class="ax_default box_1" data-label="Body-Image">
+          <div id="u56_div" class=""></div>
+          <div id="u56_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
         </div>
-      </nav>
 
-    </div>
+        <!-- Footer (Group) -->
+        <div id="u57" class="ax_default" data-label="Footer" data-left="-1" data-top="2289" data-width="1125" data-height="106">
+
+          <!-- Contact_us (Group) -->
+          <div id="u58" class="ax_default" data-label="Contact_us" data-left="-1" data-top="2289" data-width="1125" data-height="106">
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u59" class="ax_default label">
+              <div id="u59_div" class=""></div>
+              <div id="u59_text" class="text ">
+                <p style="text-align:center;line-height:normal;"><span>Contact us:</span></p><p style="text-align:left;line-height:45px;"><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Email - WTDogs@gmail.com</span></p><p style="text-align:left;line-height:normal;"><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Instagram - @WTDogs</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unnamed (Image) -->
+          <div id="u60" class="ax_default image">
+            <img id="u60_img" class="img " src="{% static 'images/dashboard/u6.svg' %}"/>
+            <div id="u60_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Image) -->
+          <div id="u61" class="ax_default image">
+            <img id="u61_img" class="img " src="{% static 'images/dashboard/u7.svg' %}"/>
+            <div id="u61_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image-Title (Group) -->
+        <div id="u62" class="ax_default" data-label="Image-Title" data-left="-2" data-top="0" data-width="1124" data-height="290">
+
+          <!-- Image-Header (Group) -->
+          <div id="u63" class="ax_default" data-label="Image-Header" data-left="-2" data-top="0" data-width="1124" data-height="290">
+
+            <!-- Main_Image_with_dogs (Image) -->
+            <div id="u64" class="ax_default image" data-label="Main_Image_with_dogs">
+              <img id="u64_img" class="img " src="{% static 'images/dashboard/main_image_with_dogs_u10.svg' %}"/>
+              <div id="u64_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u65" class="ax_default heading_3">
+            <div id="u65_div" class=""></div>
+            <div id="u65_text" class="text ">
+              <a class="linkwhite" href="{% url 'dashboard:about_us' %}"><p><span>About us</span></p></a>
+            </div>
+          </div>
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u66" class="ax_default heading_3">
+            <div id="u66_div" class=""></div>
+            <div id="u66_text" class="text ">
+              <a class="linkwhite" href="{% url 'dashboard:services' %}"><p><span>Services</span></p></a>
+            </div>
+          </div>
+          {% if request.user.is_authenticated %}
+            <div id="u67" class="ax_default heading_3">
+              <div id="u67_div" class=""></div>
+              <div id="u67_text" class="text ">
+                <a href="{% url 'users:detail' request.user.username %}"><p><span>My profile</span></p></a>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u68" class="ax_default heading_3">
+              <div id="u68_div" class=""></div>
+              <div id="u68_text" class="text ">
+                <a class="linkwhite" href="{% url 'account_logout' %}"><p><span>Sign Out</span></p></a>
+              </div>
+            </div>
+          {% else %}
+            <!-- Unnamed (Rectangle) -->
+            <div id="u67" class="ax_default heading_3">
+              <div id="u67_div" class=""></div>
+              <div id="u67_text" class="text ">
+                <a class="linkwhite" href="{% url 'account_login' %}"><p><span>Sign in</span></p></a>
+              </div>
+            </div>
+
+            <!-- Unnamed (Rectangle) -->
+            <div id="u68" class="ax_default heading_3">
+              <div id="u68_div" class=""></div>
+              <div id="u68_text" class="text ">
+                <a class="linkwhite" href="{% url 'account_signup' %}"><p><span>Sign up</span></p></a>
+              </div>
+            </div>
+          {% endif %}
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u69" class="ax_default heading_1">
+            <div id="u69_div" class=""></div>
+            <div id="u69_text" class="text ">
+              <p><span>We love your dogs like you</span></p>
+            </div>
+          </div>
+
+          <!-- LOGO -->
+          <div id="u70" class="ax_default" data-left="30" data-top="9.28690159524218" data-width="133.198379778996" data-height="56.4261968095156">
+            <a id="linknone1" href="{% url 'dashboard:home' %}">
+
+            <!-- Name -->
+            <div id="u71" class="ax_default heading_1">
+              <div id="u71_div" class=""></div>
+              <div id="u71_text" class="text ">
+                <p><span>WTD</span></p>
+              </div>
+            </div>
+
+            <!-- Image -->
+            <div id="u72" class="ax_default image">
+              <img id="u72_img" class="img " src="{% static 'images/dashboard/logo.png' %}"/>
+              <div id="u72_text" class="text " style="display:none; visibility: hidden">
+                <p></p>
+              </div>
+            </div>
+              </a>
+          </div>
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u73" class="ax_default heading_3 ax_default_hidden" style="display:none; visibility: hidden">
+            <div id="u73_div" class=""></div>
+            <div id="u73_text" class="text ">
+              <a class="linkwhite" href="{% url 'account_signup' %}"><p><span>My account</span></p></a>
+            </div>
+          </div>
+        </div>
+        <div id="u55" style="display:none; visibility:hidden;"></div>
+
+      {% block content %}
+{#        <p>Use this document as a way to quick start any new project.</p>#}
+
+
+      {% endblock content %}
 
     <div class="container">
-
       {% if messages %}
           {% for message in messages %}
               <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
           {% endfor %}
       {% endif %}
 
-      {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
-      {% endblock content %}
-
     </div> <!-- /container -->
 
+
+
+
+
     {% block modal %}{% endblock modal %}
+
 
     <!-- Le javascript
     ================================================== -->
@@ -102,7 +260,6 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
       <!-- Your stuff: Third-party javascript libraries go here -->
-
 
       <!-- place project specific Javascript in this file -->
       {% compress js %}

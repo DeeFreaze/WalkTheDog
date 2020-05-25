@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}{% block head_title %}Client order - WTD{% endblock head_title %}{% endblock title %}
+
+{% block content %}
+  <!-- Order_Blank (Group) -->
+  <div id="u20" class="ax_default" data-label="Order_Blank" data-left="206" data-top="231" data-width="730" data-height="408">
+
+    <!-- Named_Blank (Group) -->
+    <div id="u21" class="ax_default" data-label="Named_Blank" data-left="206" data-top="231" data-width="730" data-height="408">
+
+      <!-- Main-Blank (Group) -->
+      <div id="u22" class="ax_default" data-label="Main-Blank" data-left="206" data-top="231" data-width="730" data-height="408">
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u23" class="ax_default box_1">
+          <div id="u23_div" class=""></div>
+          <div id="u23_text" class="text " style="display:none; visibility: hidden">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u24" class="ax_default heading_2">
+        <div id="u24_div" class=""></div>
+        <div id="u24_text" class="text ">
+          <p><span>&nbsp;&nbsp; &nbsp; </span></p><p><span>&nbsp;&nbsp;&nbsp; Set your options</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fields (Group) -->
+    <div id="u25" class="ax_default" data-label="Fields" data-left="271" data-top="298" data-width="602" data-height="240">
+      <!-- Walker near (Group) -->
+      <div id="u26" class="ax_default" data-label="Zip_code" data-left="271" data-top="298" data-width="234" data-height="54">
+        <div id="u27" class="ax_default heading_2">
+          <div id="u27_div" class=""></div>
+          <div id="u27_text" class="text ">
+            <p><span>Walker near:</span></p>
+          </div>
+        </div>
+        <div id="u28" class="ax_default" data-label="zipcode">
+          <div id="u28_div" class=""></div>
+          <input id="u28_input" type="text" value="" class="u28_input"/>
+          <img class="img uorder_img" src="{% static 'images/dashboard/u29.png' %}"/>
+        </div>
+        <div id="u29" class="ax_default image">
+
+        </div>
+      </div>
+      <!-- Begin_at (Group) -->
+      <div id="u41" class="ax_default" data-label="Begin_at" data-left="271" data-top="364" data-width="234" data-height="58">
+        <div id="u42" class="ax_default heading_2">
+          <div id="u42_div" class=""></div>
+          <div id="u42_text" class="text ">
+            <p><span>Begin at:</span></p>
+          </div>
+        </div>
+        <div id="u43" class="ax_default text_field" data-label="beginat">
+          <div id="u43_div" class=""></div>
+          <input id="u43_input" type="text" value="" class="u43_input"/>
+          <img class="img uorder_img" src="{% static 'images/dashboard/clock.png' %}"/>
+        </div>
+
+      </div>
+      <!-- End at (Group) -->
+      <div id="u44" class="ax_default" data-label="Duration" data-left="271" data-top="432" data-width="234" data-height="36">
+        <div id="u45" class="ax_default heading_2">
+          <div id="u45_text" class="text ">
+            <p><span>End at:</span></p>
+          </div>
+        </div>
+        <div id="u46" class="ax_default" data-label="zipcode">
+          <div class="u40_div"></div>
+          <input id="u46_input" type="text" value="" class="u51_input"/>
+          <img class="img uorder_img" src="{% static 'images/dashboard/clock2.png' %}"/>
+        </div>
+      </div>
+      <!-- Price (Group) -->
+      <div id="u35" class="ax_default" data-label="Price" data-left="271" data-top="500" data-width="234" data-height="54">
+        <div id="u36" class="ax_default heading_2">
+          <div id="u36_text" class="text ">
+            <p><span>Price:</span></p>
+          </div>
+        </div>
+        <div id="u37" class="ax_default text_field" data-label="price">
+          <div id="u37_div" class=""></div>
+          <input id="u37_input" type="text" value="" class="u37_input"/>
+          <img class="img uorder_img" src="{% static 'images/dashboard/pice.png' %}"/>
+        </div>
+      </div>
+      <!-- Date (Group) -->
+      <div id="u49" class="ax_default" data-label="Date" data-left="637" data-top="298" data-width="234" data-height="54">
+        <div id="u50" class="ax_default heading_2">
+          <div id="u50_div" class=""></div>
+          <div id="u50_text" class="text ">
+            <p><span>Date:</span></p>
+          </div>
+        </div>
+        <div id="u51" class="ax_default" data-label="zipcode">
+          <div id="u51_div" class=""></div>
+          <input id="u51_input" type="text" value="" class="u51_input"/>
+          <img class="img uorder_img" src="{% static 'images/dashboard/icncalender_u52.svg' %}"/>
+        </div>
+
+      </div>
+      <!-- Dog_name (Group) -->
+      <div id="dog_body" class="ax_default" data-label="Date" data-left="637" data-top="298" data-width="234" data-height="54">
+        <div class="ax_default heading_2 dog_name">
+          <div  class="text ">
+            <p><span>Dog name:</span></p>
+          </div>
+        </div>
+        <div class="ax_default text_field dog" data-label="addoption">
+          <div  class="dog_div"></div>
+          <input type="text" value="" class="u40_input dog_input"/>
+
+        </div>
+      </div>
+      <!-- Dog_breed (Group) -->
+      <div id="dog_breed" class="ax_default" data-label="Dog_breed" data-left="639" data-top="364" data-width="234" data-height="58">
+        <div class="ax_default heading_2 dog_name">
+          <div  class="text ">
+            <p><span>Dog breed:</span></p>
+          </div>
+        </div>
+        <div class="ax_default text_field dog" data-label="addoption">
+          <div  class="dog_div"></div>
+          <input type="text" value="" class="u40_input dog_input"/>
+          <img class="img uorder_img" src="{% static 'images/dashboard/Dog breed.png' %}"/>
+        </div>
+      </div>
+      <!-- Dog_size (Group) -->
+      <div id="dog_size" class="ax_default" data-label="Dog size" data-left="637" data-top="298" data-width="234" data-height="54">
+        <div class="ax_default heading_2 dog_name">
+          <div  class="text ">
+            <p><span>Dog size:</span></p>
+          </div>
+        </div>
+        <div class="ax_default text_field dog" data-label="addoption">
+          <div  class="dog_div"></div>
+          <input type="text" value="" class="u40_input dog_input"/>
+          <img class="img uorder_img" src="{% static 'images/dashboard/weight 2.png' %}"/>
+        </div>
+      </div>
+      <!-- Add_options (Group) -->
+      <div id="u38" class="ax_default" data-label="Add_options" data-left="639" data-top="432" data-width="234" data-height="54">
+        <div id="u39" class="ax_default heading_2">
+          <div id="u39_text" class="text ">
+            <p><span>Additional option</span></p>
+          </div>
+        </div>
+        <div id="u40" class="ax_default text_field" data-label="addoption">
+          <div id="u40_div" class=""></div>
+          <input id="u40_input" type="text" value="" class="u40_input"/>
+        </div>
+      </div>
+    </div>
+    <!-- Submit -->
+    <div id="u53" class="ax_default primary_button">
+      <div id="u53_div" class="">
+        <a id="linknone2" href="{% url 'dashboard:filter_orders' %}"><p><span>Submit</span></p></a>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

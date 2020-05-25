@@ -79,6 +79,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "walkthedog.users.apps.UsersConfig",
     # Your stuff: custom apps go here
+    "walkthedog.dashboard.apps.DashboardConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -298,6 +299,7 @@ ACCOUNT_ADAPTER = "walkthedog.users.adapters.AccountAdapter"
 SOCIALACCOUNT_ADAPTER = "walkthedog.users.adapters.SocialAccountAdapter"
 
 SOCIALACCOUNT_QUERY_EMAIL = True
+
 
 ACCOUNT_FORMS = {
     # 'login': 'myapp.forms.LoginForm'

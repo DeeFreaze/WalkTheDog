@@ -1,14 +1,16 @@
 {% extends "account/base.html" %}
+{% load static %}
 
 {% load i18n %}
-{% load crispy_forms_tags %}
+{% load crispy_forms_tags account socialaccount %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
+{% block head_title %}Sign Up{% endblock %}
 
 {% block inner %}
-<h1>{% trans "Sign Up" %}</h1>
+<h1>Sign Up</h1>
+  <br />
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+<p class="unbold">Already have an account? Then please <a class="linkcolor" href="{{ login_url }}">sign in</a>.</p> <br />
 
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
@@ -16,8 +18,21 @@
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button class="btn btn-primary" type="submit">{% trans "Sign Up" %} &raquo;</button>
+  <button class="btn btn-primary btn-success" type="submit">Sign Up</button>
 </form>
+
 
 {% endblock %}
 
+{% block auth %}
+  <!-- Unnamed (Rectangle) -->
+  <div id="u352" class="ax_default heading_2">
+    <div id="u352_div" class=""></div>
+    <div id="u352_text" class="text ">
+      <button class="primaryAction btn btn-primary " type="submit" >
+        <img id="ufacebook_img" class="img " src="{% static 'images/dashboard/facebook-logo-white.png' %}"/>
+        <a id="facebook_log" href="{% provider_login_url "facebook" next=bla %}">Sing up with Facebook</a>
+      </button>
+    </div>
+  </div>
+{% endblock auth %}
