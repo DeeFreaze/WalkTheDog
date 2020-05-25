@@ -83,7 +83,7 @@ div.refpageimage {
     width: 16px;
     height: 16px;
     cursor: pointer;
-    background-image: url(images/newwindow.gif);
+    /*background-image: url(images/newwindow.gif);*/
     background-repeat: no-repeat;
 }
 
