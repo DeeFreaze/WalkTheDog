@@ -27,7 +27,7 @@ TIME_ZONE = "Europe/Kiev"
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = "en-us"
 # https://docs.djangoproject.com/en/dev/ref/settings/#site-id
-SITE_ID = 1
+SITE_ID = 2
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
 USE_I18N = False
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-l10n
