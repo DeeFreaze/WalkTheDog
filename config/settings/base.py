@@ -299,9 +299,10 @@ SOCIALACCOUNT_ADAPTER = "walkthedog.users.adapters.SocialAccountAdapter"
 
 SOCIALACCOUNT_QUERY_EMAIL = True
 
-# ACCOUNT_FORMS = {
-#     'login': 'myapp.forms.LoginForm'
-# }
+ACCOUNT_FORMS = {
+    # 'login': 'myapp.forms.LoginForm'
+    'signup': 'walkthedog.users.forms.UserCreationForm'
+}
 
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
