@@ -83,7 +83,6 @@ div.refpageimage {
     width: 16px;
     height: 16px;
     cursor: pointer;
-    background-image: url(newwindow.gif);
     background-repeat: no-repeat;
 }
 
@@ -95,7 +94,6 @@ div.annnoteimage {
     /*width: 16px;
     height: 12px;*/
     cursor: help;
-    /*background-image: url(images/note.gif);*/
     /*background-repeat: no-repeat;*/
     width: 13px;
     height: 12px;
