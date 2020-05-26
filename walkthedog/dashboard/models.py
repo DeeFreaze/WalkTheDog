@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+from walkthedog.users.models import User
 
 
 class Order(models.Model):
@@ -11,7 +12,7 @@ class Order(models.Model):
         ('Canceled', 'Canceled'),
     )
 
-    # user = models.ForeignKey(User, related_name='bonuses', on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, related_name='users', on_delete=models.CASCADE)
     location = models.CharField(max_length=100, verbose_name='Location', default="")
     date = models.DateField(verbose_name='Дата выполнения заказа', default="")
     start_of_walk = models.TimeField(auto_now=False, auto_now_add=False)

@@ -4,7 +4,7 @@
 DJANGO_SETTINGS_MODULE=config.settings.production
 DJANGO_SECRET_KEY=g3eNlj3HjOnsDFKcV2CIP5M1NzuDYZfslCEzwFwiunUEO7z3nDGC6OiyPrhrtD3M
 DJANGO_ADMIN_URL=BA1SQpT1oOYj5oXRfjQuisWUQ8DDFEPs/
-DJANGO_ALLOWED_HOSTS=.walkthedog.pp.ua
+DJANGO_ALLOWED_HOSTS=.walkthedogge.pp.ua
 
 # Security
 # ------------------------------------------------------------------------------
