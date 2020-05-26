@@ -13,15 +13,12 @@ entryPoints:
   flower:
     address: ":5555"
 
-certificatesResolvers:
-  letsencrypt:
-    # https://docs.traefik.io/master/https/acme/#lets-encrypt
-    acme:
-      email: "awesomer228@gmail.com"
-      storage: /etc/traefik/acme/acme.json
-      # https://docs.traefik.io/master/https/acme/#httpchallenge
-      httpChallenge:
-        entryPoint: web
+tls:
+  stores:
+    default:
+      defaultCertificate:
+        certFile: /etc/traefik/server.crt
+        keyFile: /etc/traefik/cert.key
 
 http:
   routers:
@@ -41,18 +38,14 @@ http:
       middlewares:
         - csrf
       service: django
-      tls:
-        # https://docs.traefik.io/master/routing/routers/#certresolver
-        certResolver: letsencrypt
+      tls: {}
 
     flower-secure-router:
       rule: "Host(`walkthedog.pp.ua`)"
       entryPoints:
         - flower
       service: flower
-      tls:
-        # https://docs.traefik.io/master/routing/routers/#certresolver
-        certResolver: letsencrypt
+      tls: {}
 
   middlewares:
     redirect:

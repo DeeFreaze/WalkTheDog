@@ -1,5 +1,10 @@
 FROM traefik:v2.0
-RUN mkdir -p /etc/traefik/acme
-RUN touch /etc/traefik/acme/acme.json
-RUN chmod 600 /etc/traefik/acme/acme.json
+RUN mkdir -p /etc/traefik/
+
+
+COPY ./compose/production/traefik/server.crt /etc/traefik/
+COPY ./compose/production/traefik/cert.key /etc/traefik/
+RUN chmod 777 /etc/traefik/server.crt
+RUN chmod 777 /etc/traefik/cert.key
+
 COPY ./compose/production/traefik/traefik.yml /etc/traefik
