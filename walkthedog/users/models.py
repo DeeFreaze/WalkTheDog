@@ -23,7 +23,6 @@ class User(AbstractUser):
     email = models.EmailField(_('Email address'), max_length=30, unique=True)
     first_name = models.CharField('First name', max_length=120)
     last_name = models.CharField('Last name', max_length=120)
-    middle_name = models.CharField('Middle name', max_length=120)
     phone_number = models.CharField('Phone number', max_length=15, unique=True, default=0)
     image = ThumbnailerImageField('Photo', upload_to='photos', blank=True)
     who_choice = models.CharField(max_length=30, choices=IS_WHO_CHOICE,

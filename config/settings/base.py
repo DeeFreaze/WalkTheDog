@@ -325,6 +325,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'link',
             'gender',
             'updated_time',
+            'mobile_phone',
         ],
         'EXCHANGE_TOKEN': True,
         'LOCALE_FUNC': 'path.to.callable',

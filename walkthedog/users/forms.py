@@ -10,7 +10,7 @@ class UserChangeForm(forms.UserChangeForm):
 
     class Meta(forms.UserChangeForm.Meta):
         model = User
-        fields = ("email", "first_name", "last_name", "middle_name",
+        fields = ("email", "first_name", "last_name",
                   "phone_number", "image", "who_choice", "description",)
 
 
@@ -22,7 +22,7 @@ class UserCreationForm(forms.UserCreationForm):
 
     class Meta(forms.UserCreationForm.Meta):
         model = User
-        fields = ("username", "email", "first_name", "last_name", "middle_name",
+        fields = ("username", "email", "first_name", "last_name",
                   "phone_number", "image", "who_choice", "description",)
 
     def clean_username(self):
