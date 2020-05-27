@@ -23,16 +23,6 @@ django-crispy-forms==1.9.0  | https://github.com/django-crispy-forms/django-cris
 django-compressor==2.4  | https://github.com/django-compressor/django-compressor
 
 
-# Описание функционала:
-
-Действие  | Описание
-----------------|----------------------
-TODO:  | <Description> 
-TODO:  | <Description> 
-TODO:  | <Description> 
-TODO:  | <Description> 
-
-
 # Deploy Local:
 Команда  | Описание
 ----------------|----------------------
