@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+  <div id='map'></div>
+  <input type='text' id='search'>
+  <button onclick="geocodeThis()">Кнопка с текстом</button>
+
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZG15dHJvYnVoYWkiLCJhIjoiY2thbGUxMjRqMHRoZTJzanViYmZieWI4ZCJ9.8odco6gxbS-uVa4fDtE6Tg';
+    var map = new mapboxgl.Map({
+      container: 'map', // Specify the container ID
+      style: 'mapbox://styles/mapbox/outdoors-v11', // Specify which map style to use
+      center: [36.2304, 49.9903], // Specify the starting position [lng, lat]
+      zoom: 11.5 // Specify the starting zoom
+    });
+    var geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl,
+      bbox: [36.099555539700000, 49.873191250200000, 36.466960110500000,  50.114241606000000]
+    });
+    map.addControl(
+      geocoder
+    );
+    geocoder.on('results', function(results) {
+       console.log(results.features[0].center); // <------------ coords from searched address
+    })
+
+    function geocodeThis() {
+    var text = document.getElementById('search').value;
+    if (text.length >= 5) {
+        geocoder.query(text);
+    }
+    }
+  </script>
+
+</body>
+
+</html>

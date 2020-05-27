@@ -6,165 +6,221 @@
 
 {% block content %}
   <!-- Order_Blank (Group) -->
-  <div id="u20" class="ax_default" data-label="Order_Blank" data-left="206" data-top="231" data-width="730" data-height="408">
+  <form method="POST" >
+    {% csrf_token %}
+      <div id="u20" class="ax_default" data-label="Order_Blank" data-left="206" data-top="231" data-width="730" data-height="408">
 
-    <!-- Named_Blank (Group) -->
-    <div id="u21" class="ax_default" data-label="Named_Blank" data-left="206" data-top="231" data-width="730" data-height="408">
+      <!-- Named_Blank (Group) -->
+      <div id="u21" class="ax_default" data-label="Named_Blank" data-left="206" data-top="231" data-width="730" data-height="408">
 
-      <!-- Main-Blank (Group) -->
-      <div id="u22" class="ax_default" data-label="Main-Blank" data-left="206" data-top="231" data-width="730" data-height="408">
+        <!-- Main-Blank (Group) -->
+        <div id="u22" class="ax_default" data-label="Main-Blank" data-left="206" data-top="231" data-width="730" data-height="408">
+
+          <!-- Unnamed (Rectangle) -->
+          <div id="u23" class="ax_default box_1">
+            <div id="u23_div" class=""></div>
+            <div id="u23_text" class="text " style="display:none; visibility: hidden">
+              <p></p>
+            </div>
+          </div>
+        </div>
 
         <!-- Unnamed (Rectangle) -->
-        <div id="u23" class="ax_default box_1">
-          <div id="u23_div" class=""></div>
-          <div id="u23_text" class="text " style="display:none; visibility: hidden">
-            <p></p>
+        <div id="u24" class="ax_default heading_2">
+          <div id="u24_div" class=""></div>
+          <div id="u24_text" class="text ">
+            <p><span>&nbsp;&nbsp; &nbsp; </span></p><p><span>&nbsp;&nbsp;&nbsp; Set your options</span></p>
           </div>
         </div>
       </div>
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u24" class="ax_default heading_2">
-        <div id="u24_div" class=""></div>
-        <div id="u24_text" class="text ">
-          <p><span>&nbsp;&nbsp; &nbsp; </span></p><p><span>&nbsp;&nbsp;&nbsp; Set your options</span></p>
+      <!-- Fields (Group) -->
+      <div id="u25" class="ax_default" data-label="Fields" data-left="271" data-top="298" data-width="602" data-height="240">
+        <!-- Walker near (Group) -->
+        <div id="u26" class="ax_default" data-label="Zip_code" data-left="271" data-top="298" data-width="234" data-height="54">
+          <div id="u27" class="ax_default heading_2">
+            <div id="u27_div" class=""></div>
+            <div id="u27_text" class="text ">
+              <p><span>Walker near:</span></p>
+            </div>
+          </div>
+          <div id="u28" class="ax_default" data-label="zipcode">
+            <div id="u28_div" class=""></div>
+  {#          <input id="u28_input" type="text" value="" class="u28_input"/>#}
+            {% render_field form.location class+="u28_input" required="" id="search" onchange="geocodeThis()" %}
+
+            <img class="img uorder_img" src="{% static 'images/dashboard/map-point.png' %}"/>
+          </div>
+        </div>
+        <!-- Begin_at (Group) -->
+        <div id="u41" class="ax_default" data-label="Begin_at" data-left="271" data-top="364" data-width="234" data-height="58">
+          <div id="u42" class="ax_default heading_2">
+            <div id="u42_div" class=""></div>
+            <div id="u42_text" class="text ">
+              <p><span>Begin at:</span></p>
+            </div>
+          </div>
+          <div id="u43" class="ax_default text_field" data-label="beginat">
+            <div id="u43_div" class=""></div>
+  {#          <input id="u43_input" type="text" value="" class="u43_input"/>#}
+            {% render_field form.start_of_walk class+="u43_input" id="u43_input" required="" %}
+
+            <img class="img uorder_img" src="{% static 'images/dashboard/clock.png' %}"/>
+          </div>
+
+        </div>
+        <!-- End at (Group) -->
+        <div id="u44" class="ax_default" data-label="Duration" data-left="271" data-top="432" data-width="234" data-height="36">
+          <div id="u45" class="ax_default heading_2">
+            <div id="u45_text" class="text ">
+              <p><span>End at:</span></p>
+            </div>
+          </div>
+          <div id="u46" class="ax_default" data-label="zipcode">
+            <div class="u40_div"></div>
+  {#          <input id="u46_input" type="text" value="" class="u51_input"/>#}
+            {% render_field form.end_of_walk class+="u51_input" id="u46_input" required="" %}
+
+            <img class="img uorder_img" src="{% static 'images/dashboard/clock2.png' %}"/>
+          </div>
+        </div>
+        <!-- Price (Group) -->
+        <div id="u35" class="ax_default" data-label="Price" data-left="271" data-top="500" data-width="234" data-height="54">
+          <div id="u36" class="ax_default heading_2">
+            <div id="u36_text" class="text ">
+              <p><span>Price:</span></p>
+            </div>
+          </div>
+          <div id="u37" class="ax_default text_field" data-label="price">
+            <div id="u37_div" class=""></div>
+  {#          <input id="u37_input" type="text" value="" class="u37_input"/>#}
+            {% render_field form.price class+="u37_input" id="u37_input" required="" %}
+            <img class="img uorder_img" src="{% static 'images/dashboard/pice.png' %}"/>
+          </div>
+        </div>
+        <!-- Date (Group) -->
+        <div id="u49" class="ax_default" data-label="Date" data-left="637" data-top="298" data-width="234" data-height="54">
+          <div id="u50" class="ax_default heading_2">
+            <div id="u50_div" class=""></div>
+            <div id="u50_text" class="text ">
+              <p><span>Date:</span></p>
+            </div>
+          </div>
+          <div id="u51" class="ax_default date datetimepicker" data-label="zipcode" data-min-view="2" data-date-format="yyyy-mm-dd">
+            <div id="u51_div" class=""></div>
+  {#          <input id="u51_input" type="text" value="" class="u51_input"/>#}
+            <div id="date">
+              {% render_field form.date class+="u51_input" id="u51_input" required="" data-mask="date" %}
+            </div>
+            <img class="img uorder_img" src="{% static 'images/dashboard/icncalender_u52.svg' %}"/>
+          </div>
+
+        </div>
+        <!-- Dog_name (Group) -->
+        <div id="dog_body" class="ax_default" data-label="Date" data-left="637" data-top="298" data-width="234" data-height="54">
+          <div class="ax_default heading_2 dog_name">
+            <div  class="text ">
+              <p><span>Dog name:</span></p>
+            </div>
+          </div>
+          <div class="ax_default text_field dog" data-label="addoption">
+            <div  class="dog_div"></div>
+  {#          <input type="text" value="" class="u40_input dog_input"/>#}
+            {% render_field form.name class+="u40_input dog_input" required="" %}
+            <img class="img uorder_img" src="{% static 'images/dashboard/label.png' %}"/>
+          </div>
+        </div>
+        <!-- Dog_breed (Group) -->
+        <div id="dog_breed" class="ax_default" data-label="Dog_breed" data-left="639" data-top="364" data-width="234" data-height="58">
+
+          <div class="ax_default heading_2 dog_name">
+            <div  class="text ">
+              <p><span>Dog breed:</span></p>
+            </div>
+          </div>
+          <div class="ax_default text_field dog" data-label="addoption">
+            <div  class="dog_div"></div>
+  {#          <input type="text" value="" class="u40_input dog_input"/>#}
+            {% render_field form.breed class+="u40_input dog_input" required="" %}
+            <img class="img uorder_img" src="{% static 'images/dashboard/Dog breed.png' %}"/>
+          </div>
+        </div>
+        <!-- Dog_size (Group) -->
+        <div id="dog_size" class="ax_default"  data-left="637" data-top="298" data-width="234" data-height="54">
+          <div class="ax_default heading_2 dog_name">
+            <div  class="text ">
+              <p><span>Dog size:</span></p>
+            </div>
+          </div>
+          <div class="ax_default text_field dog" data-label="addoption">
+            <div  class="dog_div"></div>
+  {#          <input type="text" value="" class="u40_input dog_input"/>#}
+              {% render_field form.size class+="u40_input dog_input" required="" %}
+
+            <img class="img uorder_img" src="{% static 'images/dashboard/weight 2.png' %}"/>
+          </div>
+        </div>
+        <!-- Add_options (Group) -->
+        <div id="u38" class="ax_default" data-label="Add_options" data-left="639" data-top="432" data-width="234" data-height="54">
+          <div id="u39" class="ax_default heading_2">
+            <div id="u39_text" class="text ">
+              <p><span>Additional option</span></p>
+            </div>
+          </div>
+          <div id="u40" class="ax_default text_field" data-label="addoption">
+            <div id="u40_div" class=""></div>
+  {#          <input id="u40_input" type="text" value="" class="u40_input"/>#}
+                 {% render_field form.additional_option class+="u40_input dog_input" id="u40_input" %}
+            <img class="img uorder_img" src="{% static 'images/dashboard/plus.png' %}"/>
+          </div>
         </div>
       </div>
     </div>
+      <!-- Submit -->
+      <div id="u53" class="ax_default primary_button">
+        <div id="u53_div" class="">
+          {{ form.location.errors }}{{ form.start_of_walk.errors }}{{ form.end_of_walk.errors }}{{ form.price.errors }}
+            {{ form.date.errors }}{{ form.name.errors }}{{ form.breed.errors }}{{ form.size.errors }}{{ form.additional_option.errors }} {{ form.coordinates.error }}
+          {{ form.non_field_errors  }}
 
-    <!-- Fields (Group) -->
-    <div id="u25" class="ax_default" data-label="Fields" data-left="271" data-top="298" data-width="602" data-height="240">
-      <!-- Walker near (Group) -->
-      <div id="u26" class="ax_default" data-label="Zip_code" data-left="271" data-top="298" data-width="234" data-height="54">
-        <div id="u27" class="ax_default heading_2">
-          <div id="u27_div" class=""></div>
-          <div id="u27_text" class="text ">
-            <p><span>Walker near:</span></p>
-          </div>
+            {% render_field form.coordinates required="" id="coordinates" hidden="true" %}
+          <input id="button" class="btn btn-success btn-block" type="submit"
+                                                 value="Submit">
         </div>
-        <div id="u28" class="ax_default" data-label="zipcode">
-          <div id="u28_div" class=""></div>
-          <input id="u28_input" type="text" value="" class="u28_input"/>
-          <img class="img uorder_img" src="{% static 'images/dashboard/u29.png' %}"/>
-        </div>
-        <div id="u29" class="ax_default image">
+      </div>
+  </form>
 
-        </div>
-      </div>
-      <!-- Begin_at (Group) -->
-      <div id="u41" class="ax_default" data-label="Begin_at" data-left="271" data-top="364" data-width="234" data-height="58">
-        <div id="u42" class="ax_default heading_2">
-          <div id="u42_div" class=""></div>
-          <div id="u42_text" class="text ">
-            <p><span>Begin at:</span></p>
-          </div>
-        </div>
-        <div id="u43" class="ax_default text_field" data-label="beginat">
-          <div id="u43_div" class=""></div>
-          <input id="u43_input" type="text" value="" class="u43_input"/>
-          <img class="img uorder_img" src="{% static 'images/dashboard/clock.png' %}"/>
-        </div>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+  <div id='map'></div>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZG15dHJvYnVoYWkiLCJhIjoiY2thbGUxMjRqMHRoZTJzanViYmZieWI4ZCJ9.8odco6gxbS-uVa4fDtE6Tg';
+    var map = new mapboxgl.Map({
+      container: 'map', // Specify the container ID
+      style: 'mapbox://styles/mapbox/outdoors-v11', // Specify which map style to use
+      center: [36.2304, 49.9903], // Specify the starting position [lng, lat]
+      zoom: 11.5 // Specify the starting zoom
+    });
+    var geocoder = new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl,
+      bbox: [36.099555539700000, 49.873191250200000, 36.466960110500000,  50.114241606000000]
+    });
+    map.addControl(
+      geocoder
+    );
+    geocoder.on('results', function(results) {
+       document.getElementById('coordinates').value = results.features[0].center;
+       console.log(results.features[0].center); // <------------ coords from searched address
+    })
 
-      </div>
-      <!-- End at (Group) -->
-      <div id="u44" class="ax_default" data-label="Duration" data-left="271" data-top="432" data-width="234" data-height="36">
-        <div id="u45" class="ax_default heading_2">
-          <div id="u45_text" class="text ">
-            <p><span>End at:</span></p>
-          </div>
-        </div>
-        <div id="u46" class="ax_default" data-label="zipcode">
-          <div class="u40_div"></div>
-          <input id="u46_input" type="text" value="" class="u51_input"/>
-          <img class="img uorder_img" src="{% static 'images/dashboard/clock2.png' %}"/>
-        </div>
-      </div>
-      <!-- Price (Group) -->
-      <div id="u35" class="ax_default" data-label="Price" data-left="271" data-top="500" data-width="234" data-height="54">
-        <div id="u36" class="ax_default heading_2">
-          <div id="u36_text" class="text ">
-            <p><span>Price:</span></p>
-          </div>
-        </div>
-        <div id="u37" class="ax_default text_field" data-label="price">
-          <div id="u37_div" class=""></div>
-          <input id="u37_input" type="text" value="" class="u37_input"/>
-          <img class="img uorder_img" src="{% static 'images/dashboard/pice.png' %}"/>
-        </div>
-      </div>
-      <!-- Date (Group) -->
-      <div id="u49" class="ax_default" data-label="Date" data-left="637" data-top="298" data-width="234" data-height="54">
-        <div id="u50" class="ax_default heading_2">
-          <div id="u50_div" class=""></div>
-          <div id="u50_text" class="text ">
-            <p><span>Date:</span></p>
-          </div>
-        </div>
-        <div id="u51" class="ax_default" data-label="zipcode">
-          <div id="u51_div" class=""></div>
-          <input id="u51_input" type="text" value="" class="u51_input"/>
-          <img class="img uorder_img" src="{% static 'images/dashboard/icncalender_u52.svg' %}"/>
-        </div>
-
-      </div>
-      <!-- Dog_name (Group) -->
-      <div id="dog_body" class="ax_default" data-label="Date" data-left="637" data-top="298" data-width="234" data-height="54">
-        <div class="ax_default heading_2 dog_name">
-          <div  class="text ">
-            <p><span>Dog name:</span></p>
-          </div>
-        </div>
-        <div class="ax_default text_field dog" data-label="addoption">
-          <div  class="dog_div"></div>
-          <input type="text" value="" class="u40_input dog_input"/>
-
-        </div>
-      </div>
-      <!-- Dog_breed (Group) -->
-      <div id="dog_breed" class="ax_default" data-label="Dog_breed" data-left="639" data-top="364" data-width="234" data-height="58">
-        <div class="ax_default heading_2 dog_name">
-          <div  class="text ">
-            <p><span>Dog breed:</span></p>
-          </div>
-        </div>
-        <div class="ax_default text_field dog" data-label="addoption">
-          <div  class="dog_div"></div>
-          <input type="text" value="" class="u40_input dog_input"/>
-          <img class="img uorder_img" src="{% static 'images/dashboard/Dog breed.png' %}"/>
-        </div>
-      </div>
-      <!-- Dog_size (Group) -->
-      <div id="dog_size" class="ax_default" data-label="Dog size" data-left="637" data-top="298" data-width="234" data-height="54">
-        <div class="ax_default heading_2 dog_name">
-          <div  class="text ">
-            <p><span>Dog size:</span></p>
-          </div>
-        </div>
-        <div class="ax_default text_field dog" data-label="addoption">
-          <div  class="dog_div"></div>
-          <input type="text" value="" class="u40_input dog_input"/>
-          <img class="img uorder_img" src="{% static 'images/dashboard/weight 2.png' %}"/>
-        </div>
-      </div>
-      <!-- Add_options (Group) -->
-      <div id="u38" class="ax_default" data-label="Add_options" data-left="639" data-top="432" data-width="234" data-height="54">
-        <div id="u39" class="ax_default heading_2">
-          <div id="u39_text" class="text ">
-            <p><span>Additional option</span></p>
-          </div>
-        </div>
-        <div id="u40" class="ax_default text_field" data-label="addoption">
-          <div id="u40_div" class=""></div>
-          <input id="u40_input" type="text" value="" class="u40_input"/>
-        </div>
-      </div>
-    </div>
-    <!-- Submit -->
-    <div id="u53" class="ax_default primary_button">
-      <div id="u53_div" class="">
-        <a id="linknone2" href="{% url 'dashboard:filter_orders' %}"><p><span>Submit</span></p></a>
-      </div>
-    </div>
-  </div>
-
+    function geocodeThis() {
+    var text = document.getElementById('search').value;
+    if (text.length >= 5) {
+        geocoder.query(text);
+    }
+    }
+  </script>
 {% endblock %}

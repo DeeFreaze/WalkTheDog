@@ -2,9 +2,10 @@
 {% load static %}
 {% load widget_tweaks %}
 
-{% block title %}{% block head_title %}Review order - WTD{% endblock head_title %}{% endblock title %}
 
 {% block content %}
+
+
   <!-- Review_block (Group) -->
   <div id="u139" class="ax_default" data-label="Review_block" data-left="206" data-top="231" data-width="730" data-height="408">
 
@@ -39,7 +40,7 @@
       <div id="u145" class="ax_default heading_2">
         <div id="u145_div" class=""></div>
         <div id="u145_text" class="text ">
-          <p><span>Walk near (Zip code)</span></p>
+          <p><span>Walk near</span></p>
         </div>
       </div>
 
@@ -72,7 +73,7 @@
     <div id="u150" class="ax_default primary_button">
       <div id="u150_div" class=""></div>
       <div id="u150_text" class="text ">
-        <p><span>Accept</span></p>
+        <a id="linknone2"  href="{% url 'dashboard:home' %}"><p><span>Accept</span></p></a>
       </div>
     </div>
 
@@ -81,7 +82,7 @@
 
       <!-- Unnamed (Shape) -->
       <div id="u152" class="ax_default heading_2">
-        <img id="u152_img" class="img " src="images/main_client/u36.svg"/>
+
         <div id="u152_text" class="text ">
           <p><span>Price</span></p>
         </div>
@@ -99,7 +100,7 @@
 
       <!-- Unnamed (Shape) -->
       <div id="u155" class="ax_default heading_2">
-        <img id="u155_img" class="img " src="images/main_client/u36.svg"/>
+
         <div id="u155_text" class="text ">
           <p><span>Additional option</span></p>
         </div>
@@ -159,7 +160,7 @@
 
   <!-- Unnamed (Image) -->
   <div id="u164" class="ax_default image">
-    <img id="u164_img" class="img " src="images/reviews/u164.svg"/>
+
     <div id="u164_text" class="text " style="display:none; visibility: hidden">
       <p></p>
     </div>
@@ -167,7 +168,7 @@
 
   <!-- Unnamed (Image) -->
   <div id="u165" class="ax_default image">
-    <img id="u165_img" class="img " src="images/reviews/u164.svg"/>
+
     <div id="u165_text" class="text " style="display:none; visibility: hidden">
       <p></p>
     </div>
@@ -175,7 +176,7 @@
 
   <!-- Unnamed (Image) -->
   <div id="u166" class="ax_default image">
-    <img id="u166_img" class="img " src="images/main/u80.jpg"/>
+
     <div id="u166_text" class="text " style="display:none; visibility: hidden">
       <p></p>
     </div>
@@ -183,9 +184,29 @@
 
   <!-- Unnamed (Image) -->
   <div id="u167" class="ax_default image">
-    <img id="u167_img" class="img " src="images/main/u81.jpg"/>
+
     <div id="u167_text" class="text " style="display:none; visibility: hidden">
       <p></p>
     </div>
   </div>
+  <script>
+    var data = localStorage.getItem('coords');
+    var set;
+    {% for order in object_list %}
+        if(data == "{{order.coordinates}}")
+        {
+              document.getElementById("u146_input").value = "{{order.location}}";
+              document.getElementById("u162_input").value = "{{order.start_of_walk}}" + " - " + "{{order.end_of_walk}}";
+              document.getElementById("u153_input").value = "{{order.price}}";
+              document.getElementById("u158_input").value = "{{order.date}}";
+              document.getElementById("u148_input").value = "{{order.breed}}";
+              document.getElementById("u156_input").value = "{{order.additional_option}}";
+
+        }
+    {% endfor %}
+    localStorage.clear();
+
+
+
+  </script>
 {% endblock %}

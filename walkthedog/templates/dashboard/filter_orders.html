@@ -3,6 +3,144 @@
 {% load widget_tweaks %}
 
 {% block content %}
+<style>
+
+/* Include the padding and border in an element's total width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #888;
+  color: #fff;
+
+}
+ul li.normal {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Style the header */
+.header {
+  background-color: #f44336;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+</style>
+<body onload="newElement()"></body>
+
+
+
           <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
           <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
 
@@ -15,22 +153,83 @@
           </div>
           <!-- Map (Placeholder) -->
             <div id="u192" class="ax_default" data-label="Map_view" data-left="563" data-top="395" data-width="540" data-height="576">
-
               <div id="u193" class="ax_default placeholder" data-label="Map">
-
-
                   <div id='map' style='width: 510px; height: 550px;'></div>
+              </div>
+              <a id="linknone2" href="{% url 'dashboard:review_order' %}"><button style='width: 200px; height: 50px;  position:absolute; left:450px;top:1000px;'>Accept</button></a>
+            </div>
 
-                <script>
+          </div>
+
+          <!--List-->
+          <div id="u191" class="ax_default">
+
+              <div id="myDIV" class="header">
+              <h2 style="margin:5px">Orders</h2>
+              <input type="text" id="myInput" placeholder="">
+              <span onclick="" class="addBtn">Find</span>
+            </div>
+
+            <ul id="myUL"><!--LIST OF ORDERS-->
+
+            </ul>
+
+
+          </div>
+
+          <script>
+                  // coordinates ////////////////////////////////// <--------------------------- take from BD
+                  var x = "0000000000";
+                  var y = "0000000000";
+                  var orders = [];
+
+                  {% for order in object_list %}
+                      orders.push(new Array("{{order.location}}",{{order.coordinates}}))
+                  {% endfor %}
+
+                  var longLat = [];
+                  {% for order in object_list %}
+                      longLat.push(new Array({{order.coordinates}}))
+                  {% endfor %}
+                  var nametag = [];
+                  {% for order in object_list %}
+                      nametag.push(new Array("{{order.location}}"));
+                  {% endfor %}
+
+                  // Create a new list item when clicking on the "Add" button
+
+                  function newElement() {
+                    for(var i = 0; i < longLat.length; i++)
+                    {
+                      var li = document.createElement("li");
+                      var dt = document.createElement("dt");
+
+                      var inputValue = nametag[i];  // <-------------------------------- set text of li as coords from Array longLat
+                      var t = document.createTextNode(inputValue);
+                      li.appendChild(t);
+
+                      dt.appendChild(li);
+
+                      if (inputValue === '') {
+                        alert("You must write something!");
+                      } else {
+                        document.getElementById("myUL").appendChild(li);
+                      }
+                      document.getElementById("myInput").value = "";
+                    }
+                    for (i = 0; i < close.length; i++) {
+                      close[i].onclick = function() {
+                        var div = this.parentElement;
+                        div.style.display = "none";
+                      }
+                    }
+                  }
+
+
+/////////////////////////////////////////////////////////////////////
                   var featureCollection = []; // Initialize empty collection
                   //'https://img.icons8.com/plasticine/2x/dog.png'
                   //center: [36.2304, 49.9903],
-                  // coordinates ////////////////////////////////// <--------------------------- take from BD
-                  var longLat = [
-                        [36.2224, 49.9913],
-                        [36.2134, 49.9643],
-                        [36.2314, 49.9723]
-                      ];
                   //////////////////////////////////////////////////
                       // for every item object within longLat
                       for(var itemIndex in longLat) {
@@ -45,7 +244,7 @@
                   container: 'map',
                   style: 'mapbox://styles/mapbox/streets-v11',
                   center: [36.2304, 49.9903],
-                  zoom: 9
+                  zoom: 11
                   });
 
                   map.on('load', function() {
@@ -67,14 +266,15 @@
                           'source': 'point',
                             'layout': {
                               'icon-image': 'dog',
-                              'icon-size': 0.15
+                              'icon-size': 0.2
                             }
                         });
                       }
                     );
                     // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
-                    map.on('click', 'symbols', function(e) {map.flyTo({center: e.features[0].geometry.coordinates });});
-
+                    map.on('click', 'symbols', function(e) {map.flyTo({center: e.features[0].geometry.coordinates})
+                      localStorage.setItem('coords', e.features[0].geometry.coordinates);
+                    });
                     // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
                     map.on('mouseenter', 'symbols', function() {
                     map.getCanvas().style.cursor = 'pointer';
@@ -84,15 +284,34 @@
                     map.on('mouseleave', 'symbols', function() {
                     map.getCanvas().style.cursor = '';
                     });
+
+                    var list = document.querySelector('ul');
+                    list.addEventListener('click', function(ev) {
+                      if (ev.target.tagName === 'LI') {
+                        var place;
+                        var t = ev.target.innerText; //<------------------------------------------take text from li and cut the coords to the flyTo() method
+                        for (var i = 0; i < orders.length; i++)
+                        {
+                            if(t == orders[i][0])
+                            {
+                              place = orders[i][1] + "," + orders[i][2];
+                            }
+                        }
+                        x = place.split(',')[0];
+                        y = place.split(',')[1];
+                          localStorage.setItem('coords', place);
+                        map.flyTo({ center: [place.split(',')[0], place.split(',')[1]], zoom:13 })
+
+                      }
+                    }, false);
+
                   });
+                     x = x.substr(0.9);
+                     y = y.substr(0.9);
+
+
                 </script>
-              </div>
-            </div>
-          </div>
-          <!--List-->
-          <div id="u191" class="ax_default">
-            <iframe id="u191_input" scrolling="auto" frameborder="1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          </div>
 
 
 {% endblock %}
+

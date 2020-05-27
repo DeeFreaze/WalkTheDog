@@ -7245,7 +7245,7 @@ body {
   word-wrap:break-word;
   text-transform:none;
 }
-#u28_input {
+#search {
   position:absolute;
   left:0px;
   top:0px;
@@ -13780,3 +13780,4 @@ body {
   color: white;
   text-decoration: underline;
 }
+
