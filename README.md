@@ -38,5 +38,15 @@ docker-compose -f local.yml down --volumes --rmi all   | Остановка и �
 
 
 # Deploy Productions:
-### Deploy table after deployment
+Команда  | Описание
+----------------|----------------------
+docker-compose -f production.yml up -d    | Запускаем контейнер с работой в фоновом режиме
+docker-compose -f production.yml up       | Запускаем контейнер с работой в реальном времени
+docker-compose -f production.yml build    | Делаем build контейнера
+docker-compose -f production.yml run --rm django python manage.py makemigrations    | Делаем миграции после обновления моделей
+docker-compose -f production.yml run --rm django python manage.py migrate    | Делаем миграции для всего проекта
+docker-compose -f production.yml run --rm django python manage.py createsuperuser  | Создаем суперпользователя
+docker-compose -f production.yml ps    | Просмотр запущенных контейнеров
+docker-compose -f production.yml stop   | Остановить контейнер
+docker-compose -f production.yml down --volumes --rmi all   | Остановка и удаление всех данных контейнера
 
